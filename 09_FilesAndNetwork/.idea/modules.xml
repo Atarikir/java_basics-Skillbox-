@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/09_FilesAndNetwork.iml" filepath="$PROJECT_DIR$/.idea/09_FilesAndNetwork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9.7_Files/9.7_Files.iml" filepath="$PROJECT_DIR$/9.7_Files/9.7_Files.iml" />
+    </modules>
+  </component>
+</project>
