@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/09_FilesAndNetwork/9.12_ParseHtml/9.12_ParseHtml.iml" filepath="$PROJECT_DIR$/09_FilesAndNetwork/9.12_ParseHtml/9.12_ParseHtml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_FilesAndNetwork/9.5_ReadFiles/9.5_ReadFiles.iml" filepath="$PROJECT_DIR$/09_FilesAndNetwork/9.5_ReadFiles/9.5_ReadFiles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_FilesAndNetwork/9.7_CopyFolder/9.7_CopyFolder.iml" filepath="$PROJECT_DIR$/09_FilesAndNetwork/9.7_CopyFolder/9.7_CopyFolder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_FilesAndNetwork/9.9_ParsingBankStatement/9.9_ParsingBankStatement.iml" filepath="$PROJECT_DIR$/09_FilesAndNetwork/9.9_ParsingBankStatement/9.9_ParsingBankStatement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/java_basics.iml" filepath="$PROJECT_DIR$/.idea/java_basics.iml" />
+    </modules>
+  </component>
+</project>
