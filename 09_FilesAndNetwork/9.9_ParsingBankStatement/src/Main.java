@@ -38,6 +38,10 @@ public class Main {
 
     private static List<Transaction> parseLine() {
 
+        final int INDEX_CONTRACTOR = 5;
+        final int INDEX_INCOME = 6;
+        final int INDEX_EXPENSE = 7;
+
         List<Transaction> listOfTransaction = new ArrayList<>();
 
         try {
@@ -53,22 +57,22 @@ public class Main {
                     continue;
                 }
 
-                if (fragments[7].matches(".+,.{2}")) {
-                    fragments[7] = fragments[7].replace(",", "");
-                } else if (fragments[7].matches(".+,.")) {
-                    fragments[7] = fragments[7].replace(",", "").concat("0");
-                } else fragments[7] = fragments[7].concat("00");
+                if (fragments[INDEX_EXPENSE].matches(".+,.{2}")) {
+                    fragments[INDEX_EXPENSE] = fragments[INDEX_EXPENSE].replace(",", "");
+                } else if (fragments[INDEX_EXPENSE].matches(".+,.")) {
+                    fragments[INDEX_EXPENSE] = fragments[INDEX_EXPENSE].replace(",", "").concat("0");
+                } else fragments[INDEX_EXPENSE] = fragments[INDEX_EXPENSE].concat("00");
 
-                fragments[5] = fragments[5].substring(20, 60);
-                if (fragments[5].startsWith("\\")) {
-                    fragments[5] = fragments[5].substring(1).replaceFirst("GBR\\\\", "").trim();
+                fragments[INDEX_CONTRACTOR] = fragments[INDEX_CONTRACTOR].substring(20, 60);
+                if (fragments[INDEX_CONTRACTOR].startsWith("\\")) {
+                    fragments[INDEX_CONTRACTOR] = fragments[INDEX_CONTRACTOR].substring(1).replaceFirst("GBR\\\\", "").trim();
                 } else {
-                    fragments[5] = fragments[5].substring(12).replaceFirst("\\\\", "").trim();
+                    fragments[INDEX_CONTRACTOR] = fragments[INDEX_CONTRACTOR].substring(12).replaceFirst("\\\\", "").trim();
                 }
 
                 listOfTransaction.add(new Transaction(
-                        Long.parseLong(fragments[6].concat("00")),
-                        Long.parseLong(fragments[7]),
+                        Long.parseLong(fragments[INDEX_INCOME].concat("00")),
+                        Long.parseLong(fragments[INDEX_EXPENSE]),
                         fragments[5]
                 ));
             }
