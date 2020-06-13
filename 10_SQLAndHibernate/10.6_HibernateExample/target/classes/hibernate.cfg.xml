@@ -23,6 +23,8 @@
         <mapping class="entity.Course"/>
         <mapping class="entity.Student"/>
         <mapping class="entity.Teacher"/>
+        <mapping class="entity.Subscription"/>
+        <mapping class="entity.PurchaseList"/>
 
     </session-factory>
 </hibernate-configuration>
