@@ -18,13 +18,14 @@
         <property name="format_sql">true</property>
         <!-- Set the current session context -->
         <property name="current_session_context_class">thread</property>
-        <property name="hbm2ddl.auto">validate</property>
+        <property name="hbm2ddl.auto">update</property>
 
         <mapping class="entity.Course"/>
         <mapping class="entity.Student"/>
         <mapping class="entity.Teacher"/>
         <mapping class="entity.Subscription"/>
         <mapping class="entity.PurchaseList"/>
+        <mapping class="entity.LinkedPurchaseList"/>
 
     </session-factory>
 </hibernate-configuration>
