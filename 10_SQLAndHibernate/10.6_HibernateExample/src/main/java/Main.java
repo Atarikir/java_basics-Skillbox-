@@ -87,8 +87,7 @@ public class Main {
             System.out.println(course.getName());
 
             LinkedPurchaseList sc = new LinkedPurchaseList(
-                    new LinkedPurchaseList.Key(student.getId(), course.getId()), student, course,
-                    course.getPrice(), var.getSubscriptionDate());
+                    new LinkedPurchaseList.Key(student.getId(), course.getId()), student, course);
             session.save(sc);
 
         }
