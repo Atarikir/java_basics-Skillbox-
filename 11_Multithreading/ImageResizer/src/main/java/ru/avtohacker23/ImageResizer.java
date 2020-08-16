@@ -1,30 +1,32 @@
+package ru.avtohacker23;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-public class Main
-{
-    public static void main(String[] args)
-    {
-        String srcFolder = "/users/sortedmap/Desktop/src";
-        String dstFolder = "/users/sortedmap/Desktop/dst";
+public class ImageResizer extends Thread {
 
-        File srcDir = new File(srcFolder);
+    private File[] files;
+    private int newWidth = 800;
+    private String dstFolder;
+    private long start;
 
-        long start = System.currentTimeMillis();
+    public ImageResizer(File[] files, String dstFolder, long start) {
+        this.files = files;
+        this.dstFolder = dstFolder;
+        this.start = start;
+    }
 
-        File[] files = srcDir.listFiles();
+    @Override
+    public void run() {
 
-        try
-        {
-            for(File file : files)
-            {
+        try {
+            for (File file : files) {
                 BufferedImage image = ImageIO.read(file);
-                if(image == null) {
+                if (image == null) {
                     continue;
                 }
 
-                int newWidth = 300;
                 int newHeight = (int) Math.round(
                         image.getHeight() / (image.getWidth() / (double) newWidth)
                 );
@@ -35,8 +37,7 @@ public class Main
                 int widthStep = image.getWidth() / newWidth;
                 int heightStep = image.getHeight() / newHeight;
 
-                for (int x = 0; x < newWidth; x++)
-                {
+                for (int x = 0; x < newWidth; x++) {
                     for (int y = 0; y < newHeight; y++) {
                         int rgb = image.getRGB(x * widthStep, y * heightStep);
                         newImage.setRGB(x, y, rgb);
@@ -46,11 +47,10 @@ public class Main
                 File newFile = new File(dstFolder + "/" + file.getName());
                 ImageIO.write(newImage, "jpg", newFile);
             }
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
-        System.out.println("Duration: " + (System.currentTimeMillis() - start));
+        System.out.println("Finished after start: " + (System.currentTimeMillis() - start) + " ms");
     }
 }
