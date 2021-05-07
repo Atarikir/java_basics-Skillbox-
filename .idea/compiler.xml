@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="10.4_JDBC" />
-        <module name="ImageResizer" />
         <module name="9.14_ParseJSON(mos_metro)" />
         <module name="10.6_HibernateExample" />
       </profile>
@@ -17,6 +16,7 @@
       <module name="10.6_HibernateExample" target="11" />
       <module name="9.14_ParseJSON(mos_metro)" target="9" />
       <module name="ImageResizer" target="11" />
+      <module name="Transactions" target="11" />
       <module name="untitled" target="1.5" />
     </bytecodeTargetLevel>
   </component>
