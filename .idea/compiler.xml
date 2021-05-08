@@ -9,13 +9,16 @@
         <module name="10.4_JDBC" />
         <module name="9.14_ParseJSON(mos_metro)" />
         <module name="10.6_HibernateExample" />
+        <module name="11.3_SiteMap" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="10.4_JDBC" target="11" />
       <module name="10.6_HibernateExample" target="11" />
+      <module name="11.3_SiteMap" target="11" />
       <module name="9.14_ParseJSON(mos_metro)" target="9" />
       <module name="ImageResizer" target="11" />
+      <module name="SiteMap" target="11" />
       <module name="Transactions" target="11" />
       <module name="untitled" target="1.5" />
     </bytecodeTargetLevel>
