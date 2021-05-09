@@ -29,17 +29,19 @@ public class Links extends RecursiveTask<String> {
     @Override
     protected String compute() {
         StringBuffer sb = new StringBuffer(webSiteURL + "\n");
-        Set<Links> subTask = new HashSet<>();
 
-        getChildren(subTask);
 
-        for (Links link : subTask) {
+        //Set<Links> subTask = getChildren();
+
+        for (Links link : getChildren()) {
             sb.append(link.join());
         }
         return sb.toString();
     }
 
-    private void getChildren(Set<Links> subTask) {
+    private Set<Links> getChildren() {
+
+        Set<Links> subTask = new HashSet<>();
         Document doc;
         Elements elements;
         try {
@@ -56,7 +58,9 @@ public class Links extends RecursiveTask<String> {
                     allLinks.add(attr);
                 }
             }
-        } catch (InterruptedException | IOException ignored) {
+        } catch (Exception e) {
+           e.printStackTrace();
         }
+        return subTask;
     }
 }
