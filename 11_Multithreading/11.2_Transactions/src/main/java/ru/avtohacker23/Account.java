@@ -6,7 +6,7 @@ public class Account {
     private int accNumber;
     private boolean isBlocked = false;
 
-    public Account(int accNumber,long balance) {
+    public Account(int accNumber, long balance) {
         this.accNumber = accNumber;
         this.balance = balance;
     }
@@ -24,9 +24,12 @@ public class Account {
     }
 
     public synchronized boolean withdrawMoney(long money) {
-        if (balance >= money) {
-            balance -= money;
-            return true;
+        if (isBlocked()) {
+            if (balance >= money) {
+                balance -= money;
+                return true;
+            }
+            return false;
         }
         return false;
     }
