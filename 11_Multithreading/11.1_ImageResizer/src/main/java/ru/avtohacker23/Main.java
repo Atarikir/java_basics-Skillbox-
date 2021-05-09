@@ -1,4 +1,4 @@
-package ru.avtohacker23;
+package main.java.ru.avtohacker23;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -31,7 +31,7 @@ public class Main {
         for (File file : files) {
             temp[var++] = file;
             if (var == numberOfThreads) {
-                new ImageResizer(temp, dstFolder, start).start();
+                new ru.avtohacker23.ImageResizer(temp, dstFolder, start).start();
                 temp = new File[numberOfThreads];
                 var = 0;
             }
