@@ -23,22 +23,19 @@ public class Account {
         return isBlocked;
     }
 
-    public synchronized boolean withdrawMoney(long money) {
-        if (isBlocked()) {
-            if (balance >= money) {
-                balance -= money;
-                return true;
-            }
-            return false;
+    public boolean withdrawMoney(long money) {
+        if (balance >= money) {
+            balance -= money;
+            return true;
         }
         return false;
     }
 
-    public synchronized void putMoney(long money) {
+    public void putMoney(long money) {
         balance += money;
     }
 
-    public synchronized void blockAccount() {
+    public void blockAccount() {
         isBlocked = true;
     }
 }
