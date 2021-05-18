@@ -27,8 +27,19 @@ public class Bank {
         Account fromAccount = accounts.get(fromAccountNum);
         Account toAccount = accounts.get(toAccountNum);
 
-        synchronized (fromAccount) {
-            synchronized (toAccount) {
+        Account lowSyncAccount;
+        Account topSyncAccount;
+
+        if (fromAccount.hashCode() < toAccount.hashCode()) {
+            lowSyncAccount = fromAccount;
+            topSyncAccount = toAccount;
+        } else {
+            lowSyncAccount = toAccount;
+            topSyncAccount = fromAccount;
+        }
+
+        synchronized (lowSyncAccount) {
+            synchronized (topSyncAccount) {
 
                 if (fromAccount.isBlocked() || toAccount.isBlocked()) {
                     return;
@@ -42,7 +53,6 @@ public class Bank {
                         fromAccount.blockAccount();
                         toAccount.blockAccount();
                     }
-
                 }
             }
         }
@@ -68,7 +78,7 @@ public class Bank {
 
     private static HashMap<Integer, Account> fillAccounts() {
         HashMap<Integer, Account> accountMap = new HashMap<>();
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 100; i++) {
             long initialValue = (long) (80000 + 20000 * Math.random());
             Account account = new Account(i, initialValue);
             accountMap.put(i, account);
