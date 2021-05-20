@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,12 +20,8 @@ public class TaskController {
 
     @GetMapping("/tasks/")
     public List<Task> list() {
-        Iterable taskIterable = taskRepository.findAll();
 
-        List<Task> tasks = new ArrayList<>();
-        for (Object task : taskIterable) {
-            tasks.add((Task) task);
-        }
+        List<Task> tasks = (List<Task>) taskRepository.findAll();
         return tasks;
     }
 
