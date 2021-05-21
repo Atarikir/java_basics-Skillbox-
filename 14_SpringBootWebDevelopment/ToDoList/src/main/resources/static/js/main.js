@@ -28,8 +28,23 @@ $(function(){
             url: '/tasks/' + taskId,
             success: function(response)
             {
-                var code = '<span>Описание дела:  ' + response.description + '</span>';
-                link.parent().append(code);
+                var code = 'Описание дела:  ' + response.description;
+
+                //ищем объекты span у родителя
+                let desc_span = link.parent().find("span")
+
+                //если их нет, то есть массив пустой
+                if(desc_span.length === 0) {
+
+                //создаем новый span и укажем ему id на основании id дела
+                desc_span = $('<span>', {id: 'task-desk' + taskId});
+
+                //добавим к родителю
+                link.parent().append(desc_span);
+                }
+
+                //в любом случае зададим текст, тут уже точно объект есть
+                desc_span.text(code);
             },
             error: function(response)
             {
@@ -59,6 +74,9 @@ $(function(){
                     task[dataArray[i]['name']] = dataArray[i]['value'];
                 }
                 appendTask(task);
+
+                let count = $('#todos-count')
+                count.text(parseInt(count.text())+1)
             }
         });
         return false;
