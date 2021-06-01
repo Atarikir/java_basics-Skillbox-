@@ -1,5 +1,7 @@
 .DS_Store
-
+/.idea/
+/target/
+*.iml
 # Created by https://www.gitignore.io/api/java,windows,jetbrains
 # Edit at https://www.gitignore.io/?templates=java,windows,jetbrains
 
