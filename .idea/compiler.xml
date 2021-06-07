@@ -6,13 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="MeetingWebsite" />
         <module name="14.2_ToDoList" />
         <module name="9.14_ParseJSON(mos_metro)" />
         <module name="10.6_HibernateExample" />
         <module name="ToDoList" />
+        <module name="Students" />
         <module name="11.3_SiteMap" />
+        <module name="CarNumberGenerator" />
         <module name="BookLibrary" />
         <module name="10.4_JDBC" />
+        <module name="Shops" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,8 +26,12 @@
       <module name="14.2_ToDoList" target="11" />
       <module name="9.14_ParseJSON(mos_metro)" target="9" />
       <module name="BookLibrary" target="8" />
+      <module name="CarNumberGenerator" target="11" />
       <module name="ImageResizer" target="11" />
+      <module name="MeetingWebsite" target="11" />
+      <module name="Shops" target="11" />
       <module name="SiteMap" target="11" />
+      <module name="Students" target="11" />
       <module name="ToDoList" target="11" />
       <module name="Transactions" target="11" />
       <module name="untitled" target="1.5" />
